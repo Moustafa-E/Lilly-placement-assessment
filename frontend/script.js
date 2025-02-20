@@ -20,7 +20,7 @@ function displayAllMedicines(data){
 
 function fetchAllMedicines() {
     fetch("http://localhost:8000/medicines")
-        .then(response => response.json) // obtain json object from response.
+        .then(response => response.json()) // obtain json object from response.
         .then(data => {
             console.log(data)
             displayAllMedicines(data)

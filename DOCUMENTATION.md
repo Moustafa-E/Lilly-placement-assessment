@@ -41,6 +41,7 @@
             - Adding console logs to view what it's working on. Loop doesn't start so probably problem with response from fetchMedicine
             - console.log(data) before loop doesn't show expected json object -> problem definitely in fetching function
             - Adding log before passing data to displayAllMedicines shows empty json
+            + Found it: response.json needed to be response.json().
 
 
 
