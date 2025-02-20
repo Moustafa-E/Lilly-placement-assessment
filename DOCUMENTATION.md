@@ -24,11 +24,11 @@
 
 # Objective 1: Fetch data from backend and send it to the front end, displaying in a user-friendly way.
 + Need to fetch data using javascript:
-    + fetch data by sending GET request to endpoint in python script
+    + fetch data by sending GET request to endpoint in python script 
     + convert response to JSON
     + display it on front-end (preferably some other function does this) with a loop by changing elements on the html
 + pt 1: Will start by making a button that displays all medicines with their prices in a list. 
-    - Set up a live server with VS code to view index and medicine list not showing up.
+    - Set up a live server with VS code to view index and medicine list not showing up. 
         
         - Inspecting the page on a live server, console logs show this. Server definitely running:
         "GET http://0.0.0.0:8000/medicines net::ERR_ADDRESS_INVALID"
@@ -43,12 +43,9 @@
             - Adding log before passing data to displayAllMedicines shows empty json
             + Found it: response.json needed to be response.json().
 
-
-
-
-
-
 + pt 2: Can make a simple form that sends the name of the medicine to the get_single_med endpoint. 
+    - Can reuse displayAllMedicines but only send an array containing a single object. Will rename it to displayMedicines for clarity. 
+
 
 # Objective 2: A data engineer had some issues migrating data, leaving some gaps in our database. How can you ensure that the frontend handles missing/invalid data returned from the APIs without crashing?
 + All I need is some error handling / data filtering on the response from objective 1.
