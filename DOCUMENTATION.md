@@ -27,6 +27,7 @@
     + convert response to JSON
     + display it on front-end (preferably some other function does this) with a loop by changing elements on the html
 + pt 1: Will start by making a button that displays all medicines with their prices in a list. 
+    
 + pt 2: Can make a simple form that sends the name of the medicine to the get_single_med endpoint. 
 
 # Objective 2: A data engineer had some issues migrating data, leaving some gaps in our database. How can you ensure that the frontend handles missing/invalid data returned from the APIs without crashing?
