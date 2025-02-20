@@ -31,11 +31,12 @@ function generateMedicinesList(data){
 function showAllMedicines(){
     fetchAllMedicines().then(data => {
         const filtered = filterMedicines(data)
-        displayMedicines(filtered);
+        generateMedicinesList(filtered);
     });
 }
 
 function checkMedicinePresence(name){
+    // Will return to this another time. 
     fetchAllMedicines().then(data => {
         data.forEach(med => {
             if(name === med.name){

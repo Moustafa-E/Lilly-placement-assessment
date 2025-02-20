@@ -83,6 +83,8 @@
         + Need to return the fetch promise in fetchAllMedicines & create new function which the button will activate.
         + Renamed displayMedicines to generateMedicineList for clarity. 
     + if checkMedicinePromise returns false, only then will I make a call to the endpoint. So need one more function that the form sends the data to before it reaches the /create endpoint. 
+    
+    - Oops: Will need an asynchronous function to handle form submission in order to perform the medicine presence check. Also apparently can't use forEach because it doesn't return a promise that resolves to true or false. This seems outside the scope (though I can do it with more time) so I'll let this one go for now and just stick with forms. 
 
 
 
@@ -102,4 +104,3 @@
 
 ## Highlights
 + Not terribly impressive but I'm glad I restructured the code when wanting to reuse fetchAllMedicines for something else rather than just rewriting the function's body. Was tempted to do that because it was easy, but it would've made for some pretty dirty looking code. Functions that have a single task are very reusable. I can't imagine an entire codebase where various functionalities are just rewritten because it was easy at the time. Such systems can be incredibly difficult to maintain and improve on over time. 
-+ Also liked how I made sure to check first if a medicine is present before allowing it to be added. 
