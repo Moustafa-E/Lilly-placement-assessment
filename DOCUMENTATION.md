@@ -56,6 +56,13 @@
     + I'll loop through all returned json objects and omit those that contain empty strings for names or no prices with an if condition.
         + This link has everything I need: https://stackoverflow.com/questions/5310304/remove-json-element (using very last answer)
         - data = data.medicines.filter(med => (!med.name || !med.price)); returns items we want to remove. We want the opposite so need !(!med.name || !med.price)
+        - Seems to return correct list based on logs but for each loop is having trouble again:
+            TypeError: Cannot read properties of undefined (reading 'forEach')
+            at displayMedicines (script.js:17:20)
+            at script.js:31:13
+        - found it: The filter function returns json objects in list without the medicines container. Need to keep either keep this or change displayMedicines (way easier doing this).
+        + worked! 
+
         
 
 # Objective 3: You can send data to the backend via the available API(s), however it is not particularly user-friendly. How will you create a user-friendly solution that allows users to input data on the site and send it to the backend?
