@@ -1,14 +1,16 @@
 function filterMedicines(data) {
-    data.medicines.filter(med => (!med.name || !med.price));
-    // ^ looks inside medicines and removes any item with an empty name or price. 
+    console.log(data)
+    data = data.medicines.filter(med => !(!med.name || !med.price));
+    console.log(data)
     return data
+    // ^ looks inside medicines and removes any item with an empty name or price. 
 }
 
 function displayMedicines(data){
     // Will grab root node in html and change it with a loop, displaying all medicines and their prices. 
     const medicinesList = document.getElementById("all-medicines-list");
-    console.log("starting data display")
-    console.log(data)
+    //console.log("starting data display")
+    //console.log(data)
 
     medicinesList.innerHTML="" // After turning it into a button I didn't want the list to repeat when pressing the button many times. 
 
@@ -25,8 +27,8 @@ function fetchAllMedicines() {
     fetch("http://localhost:8000/medicines")
         .then(response => response.json()) // obtain json object from response.
         .then(data => {
-            console.log(data)
-            displayMedicines(data)
+            //console.log(data)
+            displayMedicines(filterMedicines(data))
         }) // pass response above function for display
         .catch(error => console.error("Error fetching medicines:", error))
 }

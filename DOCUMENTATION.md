@@ -55,6 +55,7 @@
     + I'll reuse the /delete logic + forEach loop in JS because we want the error handling done on frontend.
     + I'll loop through all returned json objects and omit those that contain empty strings for names or no prices with an if condition.
         + This link has everything I need: https://stackoverflow.com/questions/5310304/remove-json-element (using very last answer)
+        - data = data.medicines.filter(med => (!med.name || !med.price)); returns items we want to remove. We want the opposite so need !(!med.name || !med.price)
         
 
 # Objective 3: You can send data to the backend via the available API(s), however it is not particularly user-friendly. How will you create a user-friendly solution that allows users to input data on the site and send it to the backend?
