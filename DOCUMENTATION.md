@@ -76,6 +76,18 @@
     + /delete will not differ. I'll choose to keep the price field so that it's a little more difficult to delete an item, giving them time to ensure they aren't making a mistake. 
 + I could be fancy and use an AJAX form, for which I'd need to override the onsubmit property of the html form and set it to return a javascript function instead. I'll do this after trying out the easier solution above. 
 
++ For the sake of time I'll only use the add endpoint because the other two are exactly the same, just calling different endpoints in the backend.
+    + Need a function that checks presence of medicine user attempts adding.
+    + Will do this front-end for simplicity but ideally you'd perform the check inside create_med() to reduce number of calls to backend (also not sure if I'm supposed to alter these functions despite main.py being in scope).
+    - Problem - can't reuse fetch medicines to get data because it calls display. Need to take out call to display and have the button call a different function which uses fetch. 
+        + Need to return the fetch promise in fetchAllMedicines & create new function which the button will activate.
+        + Renamed displayMedicines to generateMedicineList for clarity. 
+    + if checkMedicinePromise returns false, only then will I make a call to the endpoint. So need one more function that the form sends the data to before it reaches the /create endpoint. 
+    
+    - Oops: Will need an asynchronous function to handle form submission in order to perform the medicine presence check. Also apparently can't use forEach because it doesn't return a promise that resolves to true or false. This seems outside the scope (though I can do it with more time) so I'll let this one go for now and just stick with forms. 
+
+
+
 # Objective 4: The frontend site's design leaves a lot to be desired. Can you make any improvements to the overall design and user experience? (this one is open-ended; feel free to be creative here!)
 + Will leave this till last after all elements are on the page and working. 
 + Could use WAY more colour but not too much. Perhaps some rounded corners on buttons to make them stand out.
@@ -88,3 +100,7 @@
 + For example: 
     + For every med item in data["medicines"], append med['price'] to a list called prices (could also use comprehension to directly create prices).
     + Return len(prices) / sum(prices)
+
+
+## Highlights
++ Not terribly impressive but I'm glad I restructured the code when wanting to reuse fetchAllMedicines for something else rather than just rewriting the function's body. Was tempted to do that because it was easy, but it would've made for some pretty dirty looking code. Functions that have a single task are very reusable. I can't imagine an entire codebase where various functionalities are just rewritten because it was easy at the time. Such systems can be incredibly difficult to maintain and improve on over time. 
