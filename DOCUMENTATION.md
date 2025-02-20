@@ -20,6 +20,7 @@
 ## Approach
 + I'll start by looking at every objective and breaking them down into smaller steps with psuedo(ish) code.
     + This'll make prioritising objectives easier and may allow me to complete later objectives by building onto the earlier ones (for example, objective 2 can be completed most easily by building on objective 1.) 
+    + Difficulties / problems are labelled with '-'
 
 # Objective 1: Fetch data from backend and send it to the front end, displaying in a user-friendly way.
 + Need to fetch data using javascript:
@@ -27,7 +28,25 @@
     + convert response to JSON
     + display it on front-end (preferably some other function does this) with a loop by changing elements on the html
 + pt 1: Will start by making a button that displays all medicines with their prices in a list. 
-    
+    - Set up a live server with VS code to view index and medicine list not showing up.
+        
+        - Inspecting the page on a live server, console logs show this. Server definitely running:
+        "GET http://0.0.0.0:8000/medicines net::ERR_ADDRESS_INVALID"
+            + On browser, http://localhost:8000/medicines works but http://0.0.0.0:8000/medicines doesn't. Changing to localhost in JS works. 
+
+        - Now showing this error:
+        "Error fetching medicines: TypeError: Cannot read properties of undefined (reading 'forEach')
+        at displayAllMedicines (script.js:10:20)
+        at script.js:21:23"
+            - Adding console logs to view what it's working on. Loop doesn't start so probably problem with response from fetchMedicine
+            - console.log(data) before loop doesn't show expected json object -> problem definitely in fetching function
+            - Adding log before passing data to displayAllMedicines shows empty json
+
+
+
+
+
+
 + pt 2: Can make a simple form that sends the name of the medicine to the get_single_med endpoint. 
 
 # Objective 2: A data engineer had some issues migrating data, leaving some gaps in our database. How can you ensure that the frontend handles missing/invalid data returned from the APIs without crashing?
