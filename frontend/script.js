@@ -25,7 +25,11 @@ function generateMedicinesList(data){
         listItem.textContent = `${med.name}: $${med.price}`;
         medicinesList.appendChild(listItem);
     });
+}
 
+function clearMedicines(){
+    const medicinesList = document.getElementById("all-medicines-list");
+    medicinesList.innerHTML="" // Extra button to easily clear list.
 }
 
 function showAllMedicines(){
