@@ -98,6 +98,7 @@
 + For example: 
     + For every med item in data["medicines"], append med['price'] to a list called prices (could also use comprehension to directly create prices).
     + Return len(prices) / sum(prices)
+    - oops just realised this was flipped
 
 
 ## Highlights
