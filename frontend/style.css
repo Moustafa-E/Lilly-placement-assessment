@@ -52,3 +52,16 @@ section {
     justify-content: center;
     gap: 2em;
 }
+
+#all-medicines-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+}
+
+#all-medicines-list li {
+    flex: 1 1 200px;
+    list-style-position: inside;
+    margin: 1em;
+}
