@@ -1,3 +1,9 @@
+function fetchAllMedicines(){
+    return fetch("http://localhost:8000/medicines")
+        .then(response => response.json()) // obtain json object from response.
+        .catch(error => console.error("Error fetching medicines:", error));
+}
+
 function filterMedicines(data){
     console.log(data)
     data = data.medicines.filter(med => !(!med.name || !med.price));
@@ -13,7 +19,7 @@ function generateMedicinesList(data){
     //console.log(data)
 
     medicinesList.innerHTML="" // After turning it into a button I didn't want the list to repeat when pressing the button many times. 
-    // Removed ".medicine" becuase filter function removes it. All data goes through filter first anyway.
+    // Removed ".medicine" because filter function removes it. All data goes through filter first anyway.
     data.forEach(med => {
         const listItem = document.createElement("li");
         listItem.textContent = `${med.name}: $${med.price}`;
@@ -22,15 +28,20 @@ function generateMedicinesList(data){
 
 }
 
-function fetchAllMedicines(){
-    return fetch("http://localhost:8000/medicines")
-        .then(response => response.json()) // obtain json object from response.
-        .catch(error => console.error("Error fetching medicines:", error));
-}
-
 function showAllMedicines(){
     fetchAllMedicines().then(data => {
         const filtered = filterMedicines(data)
         displayMedicines(filtered);
+    });
+}
+
+function checkMedicinePresence(name){
+    fetchAllMedicines().then(data => {
+        data.forEach(med => {
+            if(name === med.name){
+                return true // if the name entered in the form is found, return true
+            }
+        })
+        return false // otherwise return false. 
     });
 }

@@ -82,6 +82,7 @@
     - Problem - can't reuse fetch medicines to get data because it calls display. Need to take out call to display and have the button call a different function which uses fetch. 
         + Need to return the fetch promise in fetchAllMedicines & create new function which the button will activate.
         + Renamed displayMedicines to generateMedicineList for clarity. 
+    + if checkMedicinePromise returns false, only then will I make a call to the endpoint. So need one more function that the form sends the data to before it reaches the /create endpoint. 
 
 
 
@@ -97,3 +98,8 @@
 + For example: 
     + For every med item in data["medicines"], append med['price'] to a list called prices (could also use comprehension to directly create prices).
     + Return len(prices) / sum(prices)
+
+
+## Highlights
++ Not terribly impressive but I'm glad I restructured the code when wanting to reuse fetchAllMedicines for something else rather than just rewriting the function's body. Was tempted to do that because it was easy, but it would've made for some pretty dirty looking code. Functions that have a single task are very reusable. I can't imagine an entire codebase where various functionalities are just rewritten because it was easy at the time. Such systems can be incredibly difficult to maintain and improve on over time. 
++ Also liked how I made sure to check first if a medicine is present before allowing it to be added. 
