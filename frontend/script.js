@@ -1,3 +1,9 @@
+function filterMedicines(data) {
+    data.medicines.filter(med => (!med.name || !med.price));
+    // ^ looks inside medicines and removes any item with an empty name or price. 
+    return data
+}
+
 function displayMedicines(data){
     // Will grab root node in html and change it with a loop, displaying all medicines and their prices. 
     const medicinesList = document.getElementById("all-medicines-list");
