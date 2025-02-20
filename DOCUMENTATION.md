@@ -51,7 +51,19 @@
 # Objective 2: A data engineer had some issues migrating data, leaving some gaps in our database. How can you ensure that the frontend handles missing/invalid data returned from the APIs without crashing?
 + All I need is some error handling / data filtering on the response from objective 1.
 + If I have a function to fetch and a function to display, I can add another function in between to filter. 
-+ It'll be a bit hard to test since data.json is out of scope and contains no gaps, so I'll copy it into a new file and use that instead temporarily (see dummyData.json). 
++ It'll be a bit hard to test since data.json is out of scope and contains no gaps, so I'll copy it into a new file and use that instead temporarily (see dummyData.json) - nevermind missed the gap.
+    + I'll reuse the /delete logic + forEach loop in JS because we want the error handling done on frontend.
+    + I'll loop through all returned json objects and omit those that contain empty strings for names or no prices with an if condition.
+        + This link has everything I need: https://stackoverflow.com/questions/5310304/remove-json-element (using very last answer)
+        - data = data.medicines.filter(med => (!med.name || !med.price)); returns items we want to remove. We want the opposite so need !(!med.name || !med.price)
+        - Seems to return correct list based on logs but for each loop is having trouble again:
+            TypeError: Cannot read properties of undefined (reading 'forEach')
+            at displayMedicines (script.js:17:20)
+            at script.js:31:13
+        - found it: The filter function returns json objects in list without the medicines container. Need to keep either keep this or change displayMedicines (way easier doing this).
+        + worked! 
+
+        
 
 # Objective 3: You can send data to the backend via the available API(s), however it is not particularly user-friendly. How will you create a user-friendly solution that allows users to input data on the site and send it to the backend?
 + Let's say a user wants to add a medicine. We have an endpoint for that already called create_med. We can use html and/or javascript to send data directly to that enpoint via a form visible on the html.
@@ -63,6 +75,12 @@
     + /update form will look similar to /create but if user enters a non-existent item they'll get the custom error message
     + /delete will not differ. I'll choose to keep the price field so that it's a little more difficult to delete an item, giving them time to ensure they aren't making a mistake. 
 + I could be fancy and use an AJAX form, for which I'd need to override the onsubmit property of the html form and set it to return a javascript function instead. I'll do this after trying out the easier solution above. 
+
++ For the sake of time I'll only use the add endpoint because the other two are exactly the same, just calling different endpoints in the backend.
+    + Need a function that checks presence of medicine user attempts adding.
+    + Will do this front-end for simplicity but ideally you'd perform the check inside create_med() to reduce number of calls to backend (also not sure if I'm supposed to alter these functions despite main.py being in scope).
+
+
 
 # Objective 4: The frontend site's design leaves a lot to be desired. Can you make any improvements to the overall design and user experience? (this one is open-ended; feel free to be creative here!)
 + Will leave this till last after all elements are on the page and working. 
