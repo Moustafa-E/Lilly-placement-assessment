@@ -45,6 +45,7 @@
 
 + pt 2: Can make a simple form that sends the name of the medicine to the get_single_med endpoint. 
     - Can reuse displayAllMedicines but only send an array containing a single object. Will rename it to displayMedicines for clarity. 
+    (since I'm spending a lot of time on this I'll leave it there and move on)
 
 
 # Objective 2: A data engineer had some issues migrating data, leaving some gaps in our database. How can you ensure that the frontend handles missing/invalid data returned from the APIs without crashing?
