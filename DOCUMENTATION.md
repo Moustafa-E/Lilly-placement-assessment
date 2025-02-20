@@ -91,7 +91,7 @@
 # Objective 4: The frontend site's design leaves a lot to be desired. Can you make any improvements to the overall design and user experience? (this one is open-ended; feel free to be creative here!)
 + Will leave this till last after all elements are on the page and working. 
 + Could use WAY more colour but not too much. Perhaps some rounded corners on buttons to make them stand out.
-+ Page layout should be central in the following order of functionality. see page_draft.png
++ Page layout should be central in the following order of functionality. see page_draft.png & word document. 
 
 # Objective 5: The boss has asked me for a quarterly report. Can you create a backend function for averaging prices of all our medicines?
 + Could use a similar structure to the get_single_med function to return all of the prices in a list. Averaging should be easy from there if I sum all the items (sum()) and divide its length (len()) by it. 

@@ -8,7 +8,8 @@
 /* Body styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: rgb(245, 245, 245);
+    /* slightly reduced background brightness */
     padding: 0;
     margin: 0;
     color: #333;
@@ -30,3 +31,18 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+h3 {
+    margin-top: 0;
+}
+
+section {
+    width:70%;
+    height:100%;
+    margin:auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 2em;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
