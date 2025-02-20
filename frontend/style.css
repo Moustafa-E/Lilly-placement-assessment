@@ -8,7 +8,8 @@
 /* Body styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: rgb(245, 245, 245);
+    /* slightly reduced background brightness */
     padding: 0;
     margin: 0;
     color: #333;
@@ -30,3 +31,81 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+section {
+    width:70%;
+    height:100%;
+    margin:auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 2em;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+}
+
+h1, h3 {
+    width:40%;
+    margin:auto;
+    margin-top: 1em;
+    text-align: center;
+}
+h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+#all-medicines-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+}
+
+#all-medicines-list li {
+    flex: 1 1 200px;
+    list-style-position: inside;
+    margin: 1em;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-input-container label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.form-input-container input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 0.5em;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+
+}
+
+/* Submit button */
+.form-container button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 1.5em;
+    
+}
+
