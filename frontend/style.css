@@ -31,10 +31,6 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
-h3 {
-    margin-top: 0;
-}
-
 section {
     width:70%;
     height:100%;
@@ -45,6 +41,18 @@ section {
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+
+}
+
+h1, h3 {
+    width:40%;
+    margin:auto;
+    margin-top: 1em;
+    text-align: center;
+}
+h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
 .button-container {
@@ -65,3 +73,39 @@ section {
     list-style-position: inside;
     margin: 1em;
 }
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-input-container label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.form-input-container input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 0.5em;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+
+}
+
+/* Submit button */
+.form-container button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 1.5em;
+    
+}
+
