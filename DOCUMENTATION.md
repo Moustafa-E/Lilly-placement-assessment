@@ -79,6 +79,8 @@
 + For the sake of time I'll only use the add endpoint because the other two are exactly the same, just calling different endpoints in the backend.
     + Need a function that checks presence of medicine user attempts adding.
     + Will do this front-end for simplicity but ideally you'd perform the check inside create_med() to reduce number of calls to backend (also not sure if I'm supposed to alter these functions despite main.py being in scope).
+    - Problem - can't reuse fetch medicines to get data because it calls display. Need to take out call to display and have the button call a different function which uses fetch. 
+        + Need to return the fetch promise in fetchAllMedicines & create new function which the button will activate.
 
 
 
